@@ -1,0 +1,22 @@
+﻿@model IEnumerable<ViewsLesson.Models.Team>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <td>Имя</td>
+        <td>Основано</td>
+    </tr>
+
+    @* Model - наша объявленная model *@
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.Name</td>
+            <td>@i.Founded.Year</td>
+        </tr>
+    }
+</table>
