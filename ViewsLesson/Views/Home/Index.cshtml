@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    //можно  инициализировать переменные(создавать данные не рекомендуется)
+
+    string[] data = { "Игроки", "Команды" };
+}
+
+<h2>Index</h2>
+<div>
+    <h1>@ViewBag.MessageText</h1>
+    @* Можно использовать переменную @name *@
+    <button class="btn btn-danger">Button</button>
+    <hr/>
+    <ul>
+        @foreach(var i in data)
+        {
+            <li><a href="/Players">@i</a></li>
+        }
+    </ul>
+
+    @Html.Password("Password", "Введите пароль")
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        @Html.TextBox("textBox")
+        @Html.TextArea("textArea")
+        @Html.Label("label")
+        <input type="submit" value="Кнопка"/>
+    }
+</div>
